@@ -13,7 +13,7 @@ public class LinkList<T> {
 		private Node next;
 		public Node() {	}
 		/**
-		 * LinkList内部类Node的有参构造方法
+		 * 内部类Node的有参构造方法
 		 */
 		public Node(T data, Node next) {
 			this.data = data;
@@ -105,7 +105,7 @@ public class LinkList<T> {
 	/**
 	 * 采用尾插法为链表添加新结点
 	 */
-	private void add(T element) {
+	public void add(T element) {
 		if(header == null) {
 			header = new Node(element, null);
 			tail = header;
@@ -120,7 +120,7 @@ public class LinkList<T> {
 	/**
 	 * 采用头插法为链表添加新结点
 	 */
-	private void addAtHeader(T element) {
+	public void addAtHeader(T element) {
 			header = new Node(element, header);
 			if(tail == null){
 				tail = header;

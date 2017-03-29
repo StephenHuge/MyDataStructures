@@ -80,22 +80,44 @@ public class Stack {
 			return temp;
 		}		
 	}
+	/**
+	 * 按出栈顺序toString()
+	 */
 	public String toString() {
 		if(isEmpty()) {
 			return "[]";
 		}else{
 			StringBuilder sb = new StringBuilder();
-			sb.append("ArrayStack:[");
+			sb.append("Top[");
+			for(int i = size; i > 0; i--) {
+				sb.append(pop().toString());
+				if(i != 1){
+					sb.append(", ");
+				}				
+			}
+			sb.append("]Bottom");
+			return sb.toString();
+		}
+	}
+	
+/* 
+	  //	按入栈顺序toString() 
+	public String toString() {
+		if(isEmpty()) {
+			return "[]";
+		}else{
+			StringBuilder sb = new StringBuilder();
+			sb.append("Bottom[");
 			for(int i = 0; i < size; i++) {
 				sb.append(objs[i].toString());
 				if(i != size - 1){
 					sb.append(", ");
 				}				
 			}
-			sb.append("]");
+			sb.append("]Top");
 			return sb.toString();
 		}
-	}
+	}*/
 	
 	public static void main(String[] args) {
 		Stack myStack = new Stack("aaa");
